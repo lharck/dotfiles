@@ -1,1 +1,36 @@
-/home/lucy/.config/sxhkd/sxhkdrc
+# Flameshot 
+super + shift + s     
+	flameshot gui 
+
+# emoji
+super + shift + d
+	rofimoji
+
+# Increase volume
+XF86AudioRaiseVolume
+    pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+
+# Decrease volume
+XF86AudioLowerVolume
+    pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+
+# Toggle mute
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+
+XF86MonBrightnessUp
+    changebrightness up
+
+XF86MonBrightnessDown
+    changebrightness down
+
+# Toggle microphone mute
+XF86AudioMicMute
+    pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Launch rofi
+super + d
+	rofi -modi drun,run -show drun &	
+
+
+
